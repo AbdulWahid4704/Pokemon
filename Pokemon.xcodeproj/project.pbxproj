@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		EAEC4C872C7F8FBD00B95F5E /* PokemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C862C7F8FBD00B95F5E /* PokemonApp.swift */; };
-		EAEC4C892C7F8FBD00B95F5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C882C7F8FBD00B95F5E /* ContentView.swift */; };
+		EAEC4C892C7F8FBD00B95F5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C882C7F8FBD00B95F5E /* LoginView.swift */; };
 		EAEC4C8B2C7F8FC000B95F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEC4C8A2C7F8FC000B95F5E /* Assets.xcassets */; };
 		EAEC4C8E2C7F8FC000B95F5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEC4C8D2C7F8FC000B95F5E /* Preview Assets.xcassets */; };
+		EAEC4C952C7F920C00B95F5E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C942C7F920C00B95F5E /* Color.swift */; };
+		EAEC4C992C7F953100B95F5E /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C982C7F953100B95F5E /* Textfield.swift */; };
+		EAEC4C9B2C7F989100B95F5E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C9A2C7F989100B95F5E /* CustomButton.swift */; };
+		EAEC4C9D2C7F9C1100B95F5E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C9C2C7F9C1100B95F5E /* SignUpView.swift */; };
+		EAEC4CA12C82415F00B95F5E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4CA02C82415F00B95F5E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAEC4C832C7F8FBD00B95F5E /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEC4C862C7F8FBD00B95F5E /* PokemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApp.swift; sourceTree = "<group>"; };
-		EAEC4C882C7F8FBD00B95F5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EAEC4C882C7F8FBD00B95F5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EAEC4C8A2C7F8FC000B95F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAEC4C8D2C7F8FC000B95F5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EAEC4C942C7F920C00B95F5E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EAEC4C982C7F953100B95F5E /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
+		EAEC4C9A2C7F989100B95F5E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		EAEC4C9C2C7F9C1100B95F5E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		EAEC4CA02C82415F00B95F5E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,10 @@
 		EAEC4C852C7F8FBD00B95F5E /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				EAEC4C9F2C82414700B95F5E /* Helpers */,
+				EAEC4C962C7F934000B95F5E /* Extensions */,
 				EAEC4C862C7F8FBD00B95F5E /* PokemonApp.swift */,
-				EAEC4C882C7F8FBD00B95F5E /* ContentView.swift */,
+				EAEC4C972C7F951400B95F5E /* Views */,
 				EAEC4C8A2C7F8FC000B95F5E /* Assets.xcassets */,
 				EAEC4C8C2C7F8FC000B95F5E /* Preview Content */,
 			);
@@ -65,6 +77,41 @@
 				EAEC4C8D2C7F8FC000B95F5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAEC4C962C7F934000B95F5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC4C942C7F920C00B95F5E /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAEC4C972C7F951400B95F5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC4C882C7F8FBD00B95F5E /* LoginView.swift */,
+				EAEC4C9C2C7F9C1100B95F5E /* SignUpView.swift */,
+				EAEC4C9E2C82413700B95F5E /* Helper Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EAEC4C9E2C82413700B95F5E /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC4C9A2C7F989100B95F5E /* CustomButton.swift */,
+				EAEC4C982C7F953100B95F5E /* Textfield.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
+		EAEC4C9F2C82414700B95F5E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EAEC4CA02C82415F00B95F5E /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEC4C892C7F8FBD00B95F5E /* ContentView.swift in Sources */,
+				EAEC4C892C7F8FBD00B95F5E /* LoginView.swift in Sources */,
 				EAEC4C872C7F8FBD00B95F5E /* PokemonApp.swift in Sources */,
+				EAEC4C9D2C7F9C1100B95F5E /* SignUpView.swift in Sources */,
+				EAEC4C952C7F920C00B95F5E /* Color.swift in Sources */,
+				EAEC4CA12C82415F00B95F5E /* Constants.swift in Sources */,
+				EAEC4C992C7F953100B95F5E /* Textfield.swift in Sources */,
+				EAEC4C9B2C7F989100B95F5E /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

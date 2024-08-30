@@ -8,8 +8,44 @@
 import SwiftUI
 
 struct SignUpView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Image("PokemonLogo")
+                .resizable()
+                .scaledToFit()
+                .padding(.top, 40)
+                .padding(.horizontal)
+            
+            Spacer()
+            
+            CustomTextField(title: "Name", prompt:"Name")
+            CustomTextField(title: "Phone", prompt:"Phone")
+            CustomTextField(title: "Email", prompt:"Email")
+            CustomTextField(title: "Password", prompt: "Passsword")
+            CustomTextField(title: "Confirm", prompt:"Confirm")
+           
+            Spacer()
+            
+            Button {
+                // Code for log in
+            } label: {
+                CustomButton(title: "Sign Up")
+            }
+            
+            Spacer()
+            
+            HStack {
+                Text("Already have an account")
+                Text("Log In!")
+                    .foregroundColor(.pokemonSecondary)
+                    .fontWeight(.medium)
+            }
+            .italic()
+            
+        }
+        
     }
 }
 
