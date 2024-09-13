@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 @main
 struct PokemonApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ContentView()
         }
+        .modelContainer(for: User.self)
     }
 }

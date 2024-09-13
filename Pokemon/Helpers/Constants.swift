@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     
-    
-    
+    static var IS_LOGGED_IN = "isLoggedin"
+    static var DEFAULT_OTP = "1234"
     
 }

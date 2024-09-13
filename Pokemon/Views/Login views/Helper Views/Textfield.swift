@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTextField: View {
     
-    @State var value: String = ""
+    @Binding var value: String
     
     var title: String
     var prompt: String
@@ -29,7 +29,7 @@ struct CustomTextField: View {
     }
 }
 
-#Preview {
-    
-    CustomTextField(title: "Email", prompt: "Email")
-}
+//#Preview {
+//    
+//    CustomTextField(value: , title: "Email", prompt: "Email")
+//}
