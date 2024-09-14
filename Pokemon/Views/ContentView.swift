@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage(Constants.IS_LOGGED_IN) var isLoggedIn: Bool = false
+    @AppStorage(Constants.CURRENT_USER_EMAIL) var currentUser: String?
     
     var body: some View {
         
-        if isLoggedIn {
+        if currentUser != nil {
             // PokemonTabView()
             Button("Sign out") {
-                isLoggedIn = false
+                currentUser = nil
             }
             
         } else {

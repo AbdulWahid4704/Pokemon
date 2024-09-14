@@ -11,5 +11,6 @@ struct Constants {
     
     static var IS_LOGGED_IN = "isLoggedin"
     static var DEFAULT_OTP = "1234"
+    static var CURRENT_USER_EMAIL = "currentUserEmail"
     
 }

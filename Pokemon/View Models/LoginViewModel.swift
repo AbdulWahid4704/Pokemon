@@ -29,7 +29,7 @@ class LoginViewModel: ObservableObject {
         for user in existingUsers {
             if email == user.email {
                 if password == user.password {
-                    UserDefaults.standard.setValue(true, forKey: Constants.IS_LOGGED_IN)
+                    UserDefaults.standard.setValue(email, forKey: Constants.CURRENT_USER_EMAIL)
                 } else {
                     loginViewError = "Entered password is incorrect"
                 }
