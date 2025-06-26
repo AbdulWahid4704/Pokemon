@@ -18,6 +18,8 @@ class User: Identifiable {
     var password: String
     var phone: String
     
+    var imageData: Data?
+    
     
     init(name: String, email: String, password: String, phone: String) {
         self.name = name

@@ -35,9 +35,9 @@ class ForgotPasswordViewModel: ObservableObject {
     
     
     // MARK: Forgot View Method
-    func verifyNumber(existingUsers: [User]) {
+    func verifyEmail(existingUsers: [User]) {
         
-        // Check if the number exists, n grab the associated user
+        // Check if the email exists, n grab the associated user
         
         for user in existingUsers {
             if user.email == email{

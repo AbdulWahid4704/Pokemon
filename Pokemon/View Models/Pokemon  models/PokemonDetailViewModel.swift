@@ -39,6 +39,7 @@ class PokemonDetailViewModel: ObservableObject {
         
         self.frontDefault = pokemon.sprites.frontDefault
         
+        // use another api to get mp3 version, since pokeapi sends ogg
         self.cry = "https://play.pokemonshowdown.com/audio/cries/\(pokemon.name).mp3"
         
         
@@ -55,7 +56,6 @@ class PokemonDetailViewModel: ObservableObject {
         return abilities.joined(separator: ", ")
     }
     
-    //MARK: fix the ogg to mp3 conversion issue
     //function to play sound
     func playSound() {
         

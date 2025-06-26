@@ -13,11 +13,11 @@ import SwiftData
 struct PokemonApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-             //   .environmentObject(LoginViewModel())
+            ContentView()
+                .environmentObject(LoginViewModel())
             
             // MARK: test mode, direct tab view
-            PokemonTabView()
+            // PokemonTabView()
             
         }
         .modelContainer(for: User.self)

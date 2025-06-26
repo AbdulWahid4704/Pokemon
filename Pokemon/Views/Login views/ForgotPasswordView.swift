@@ -44,7 +44,7 @@ struct ForgotPasswordView: View {
                 
                 Button {
                     // code for generating otp
-                    model.verifyNumber(existingUsers: existingUsers)
+                    model.verifyEmail(existingUsers: existingUsers)
                     
                 } label: {
                     CustomButton(title: "Generate OTP")
