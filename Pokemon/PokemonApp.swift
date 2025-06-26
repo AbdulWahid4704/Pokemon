@@ -13,7 +13,8 @@ import SwiftData
 struct PokemonApp: App {
     var body: some Scene {
         WindowGroup {
-            PokemonTabView()
+            ContentView()
+                .environmentObject(LoginViewModel())
         }
         .modelContainer(for: User.self)
     }

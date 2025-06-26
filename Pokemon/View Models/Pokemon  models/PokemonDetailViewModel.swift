@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import AVFoundation
+import AVFAudio
 
 class PokemonDetailViewModel: ObservableObject {
     
@@ -17,6 +19,10 @@ class PokemonDetailViewModel: ObservableObject {
     @Published var abilities: String = ""
     
     @Published var frontDefault = ""
+    
+    var cry = ""
+    var player: AVPlayer?
+    
     
     init(pokemon: Pokemon) {
         
@@ -30,9 +36,12 @@ class PokemonDetailViewModel: ObservableObject {
         
         self.frontDefault = pokemon.sprites.frontDefault
         
+        self.cry = pokemon.cries.latest
+        
         
     }
-    
+     
+    // Function to make the strings to display in the view
     func updatedTypes(_ pokemon: Pokemon) -> String {
         return pokemon.types.map { $0.type.name.capitalized }.joined(separator: ", ")
     }
@@ -41,6 +50,19 @@ class PokemonDetailViewModel: ObservableObject {
         let abilities: [String] = pokemon.abilities.map { $0.ability.name.capitalized }
         
         return abilities.joined(separator: ", ")
+    }
+    
+    //MARK: fix the ogg to mp3 conversion issue
+    //function to play sound
+    func playSound() {
+        if let url = URL(string: cry) {
+            print(cry)
+            let playerItem = AVPlayerItem(url: url)
+            player = AVPlayer(playerItem: playerItem)
+            print(player?.status)
+            player?.play()
+        }
+        
     }
     
 }

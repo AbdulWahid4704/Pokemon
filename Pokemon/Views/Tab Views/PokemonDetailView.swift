@@ -86,6 +86,9 @@ struct PokemonDetailView: View {
                    // Play Cry Button
                    Button(action: {
                        // Action for playing cry
+                       
+                       model.playSound()
+                       
                    }) {
                        HStack {
                            Image(systemName: "play.fill")

@@ -14,14 +14,12 @@ struct ContentView: View {
     var body: some View {
         
         if currentUser != nil {
-            // PokemonTabView()
-            Button("Sign out") {
-                currentUser = nil
-            }
+            
+            PokemonTabView()
             
         } else {
             LoginView()
-                .environmentObject(LoginViewModel())
+                
         }
         
         
