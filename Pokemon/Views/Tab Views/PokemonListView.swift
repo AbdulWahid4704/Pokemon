@@ -41,9 +41,13 @@ struct PokemonListView: View {
                                
                             }
                             Spacer()
-                            Image("image 1")
-                                .scaledToFit()
-                                .frame(width: 100)
+                            AsyncImage(url: URL(string: pokemon.sprites.frontDefault)) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 100, height: 140)
+                            } placeholder: {
+                                Image(systemName: "photo")
+                            }
                         }
                         .padding(.horizontal)
                         .frame(height: 140)

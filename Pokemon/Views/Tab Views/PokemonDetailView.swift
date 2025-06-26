@@ -14,17 +14,22 @@ struct PokemonDetailView: View {
     var body: some View {
         
         VStack {
-                   // Image placeholder
-                   Image("image 1")
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width, height: 300)
-                   
-                   // Pokemon Name
+            // Image placeholder
+            AsyncImage(url: URL(string: model.frontDefault)) { image in
+                image
+                    .resizable()
+            } placeholder: {
+                Image(systemName: "photo")
+            }
+            .scaledToFit()
+            .frame(width: UIScreen.main.bounds.width, height: 300)
+            
+            // Pokemon Name
             Text(model.name)
-                       .font(.largeTitle)
-                       .fontWeight(.bold)
-                       .foregroundColor(Color.pokemonPrimary)
-                       .padding(.top, 16)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(Color.pokemonPrimary)
+                .padding(.top, 16)
                        .frame(maxWidth: .infinity, alignment: .leading)
                        .padding(.horizontal)
                        
