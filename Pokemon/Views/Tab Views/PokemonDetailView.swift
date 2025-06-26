@@ -8,33 +8,29 @@
 import SwiftUI
 
 struct PokemonDetailView: View {
+    
+    @ObservedObject var model: PokemonDetailViewModel
+    
     var body: some View {
         
         VStack {
                    // Image placeholder
-                   Rectangle()
-                       .fill(Color.gray.opacity(0.2))
-                       .frame(width: UIScreen.main.bounds.width, height: 300)
+                   Image("image 1")
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width, height: 300)
                    
                    // Pokemon Name
-                   Text("Bulbasaur")
+            Text(model.name)
                        .font(.largeTitle)
                        .fontWeight(.bold)
                        .foregroundColor(Color.pokemonPrimary)
                        .padding(.top, 16)
                        .frame(maxWidth: .infinity, alignment: .leading)
                        .padding(.horizontal)
-                   
-                   // Pokemon Types
-                   HStack(spacing: 10) {
-                       Text("type 1")
-                           .font(.headline)
-                           .foregroundColor(Color.yellow)
                        
-                       Text("type 1")
+            Text(model.types)
                            .font(.headline)
                            .foregroundColor(Color.yellow)
-                   }
                    .frame(maxWidth: .infinity, alignment: .leading)
                    .padding(.horizontal)
                    .padding(.bottom, 8)
@@ -45,7 +41,7 @@ struct PokemonDetailView: View {
                            Text("Species:")
                                .font(.subheadline)
                                .foregroundColor(.gray)
-                           Text("Seed")
+                           Text(model.species)
                                .font(.subheadline)
                                .foregroundColor(.pokemonPrimary)
                        }
@@ -54,7 +50,7 @@ struct PokemonDetailView: View {
                            Text("Height:")
                                .font(.subheadline)
                                .foregroundColor(.gray)
-                           Text("120")
+                           Text(model.height)
                                .font(.subheadline)
                                .foregroundColor(.pokemonPrimary)
                        }
@@ -63,16 +59,16 @@ struct PokemonDetailView: View {
                            Text("Weight:")
                                .font(.subheadline)
                                .foregroundColor(.gray)
-                           Text("35")
+                           Text(model.weight)
                                .font(.subheadline)
                                .foregroundColor(.pokemonPrimary)
                        }
                        
                        HStack {
-                           Text("Species:")
+                           Text("Abilities:")
                                .font(.subheadline)
                                .foregroundColor(.gray)
-                           Text("Abilities")
+                           Text(model.abilities)
                                .font(.subheadline)
                                .foregroundColor(.pokemonPrimary)
                        }
@@ -106,6 +102,6 @@ struct PokemonDetailView: View {
     
 }
 
-#Preview {
-    PokemonDetailView()
-}
+//#Preview {
+//    PokemonDetailView()
+//}

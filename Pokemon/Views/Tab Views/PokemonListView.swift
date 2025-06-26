@@ -21,8 +21,8 @@ struct PokemonListView: View {
                     
                     //Navigation link to navigate to detailed view
                     NavigationLink {
-                        //PokemonDetailView
-                        Text("Detail View")
+                        PokemonDetailView(model: PokemonDetailViewModel(pokemon: pokemon))
+                        
                     } label: {
                         HStack {
                             
@@ -68,7 +68,7 @@ struct PokemonListView: View {
             
             ForEach(types, id: \.self) { type in
                 
-                Text(type)
+                Text(type.capitalized)
                 
             }
             
@@ -79,7 +79,7 @@ struct PokemonListView: View {
     }
 }
 
-#Preview {
-    PokemonListView()
-        .environmentObject(PokemonListViewModel())
-}
+//#Preview {
+//    PokemonListView()
+//        .environmentObject(PokemonListViewModel())
+//}

@@ -19,7 +19,7 @@ struct PokemonTabView: View {
                 .environmentObject(PokemonListViewModel())
             
             // MARK: Change to profile view, detail view exists for debugging
-            PokemonDetailView()
+            // PokemonDetailView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
