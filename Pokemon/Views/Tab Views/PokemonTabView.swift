@@ -9,7 +9,24 @@ import SwiftUI
 
 struct PokemonTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            
+            PokemonListView()
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Pokemons")
+                }
+                .environmentObject(PokemonListViewModel())
+            
+            // MARK: Change to profile view, detail view exists for debugging
+            PokemonDetailView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+            
+            
+        }
     }
 }
 

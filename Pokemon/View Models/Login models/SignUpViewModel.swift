@@ -34,7 +34,7 @@ class SignUpViewModel: ObservableObject {
         // Create the user, n let the app know it has signed in
         let user = User(name: name, email: email, password: password, phone: phone)
         
-        UserDefaults.standard.setValue(true, forKey: Constants.IS_LOGGED_IN)
+        UserDefaults.standard.setValue(true, forKey: Constants.IS_LOGGED_IN_KEY)
         
         // Return the user so it can be updated in the context
         return user
