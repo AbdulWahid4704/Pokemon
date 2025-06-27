@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @AppStorage(Constants.CURRENT_USER_EMAIL_KEY) var currentUser: String?
     
+    
     var body: some View {
         
         if currentUser != nil {

@@ -46,6 +46,7 @@ struct CameraView: UIViewControllerRepresentable {
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             
+            // DEBUG - Works with simulator
             parent.image = UIImage(systemName: "person.fill")
             
             parent.presentationMode.wrappedValue.dismiss()

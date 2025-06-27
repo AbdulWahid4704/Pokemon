@@ -103,5 +103,11 @@ class ProfileViewModel: ObservableObject {
         
     }
     
+    func signOut() {
+        //sign the user out
+        UserDefaults.standard.setValue(nil, forKey: Constants.CURRENT_USER_EMAIL_KEY)
+        UserDefaults.standard.set(false, forKey: Constants.REMEMBER_ME_FLAG)
+    }
+    
     
 }

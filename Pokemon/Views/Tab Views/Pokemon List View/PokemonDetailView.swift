@@ -89,6 +89,10 @@ struct PokemonDetailView: View {
                        
                        model.playSound()
                        
+                       // DEEBUG ---- check to see if password saved
+                       KeychainManager.getPassword()
+                       
+                       
                    }) {
                        HStack {
                            Image(systemName: "play.fill")

@@ -10,6 +10,7 @@
 		EA0D42B72E0C431200E85E3E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D42B62E0C431100E85E3E /* Array.swift */; };
 		EA109EF42E0E69B0000ADE6D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA109EF32E0E69B0000ADE6D /* CameraView.swift */; };
 		EA109EF62E0E74BF000ADE6D /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA109EF52E0E74BF000ADE6D /* LocalFileManager.swift */; };
+		EA109EF82E0EAB7E000ADE6D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA109EF72E0EAB71000ADE6D /* KeychainManager.swift */; };
 		EA1EA1A02C94DF890005A490 /* NewPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA19F2C94DF890005A490 /* NewPasswordError.swift */; };
 		EA1EA1A22C94E2360005A490 /* PokemonTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA1A12C94E2360005A490 /* PokemonTabView.swift */; };
 		EA1EA1A52C94E2510005A490 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA1A42C94E2510005A490 /* PokemonListView.swift */; };
@@ -43,6 +44,7 @@
 		EA0D42B62E0C431100E85E3E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		EA109EF32E0E69B0000ADE6D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		EA109EF52E0E74BF000ADE6D /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		EA109EF72E0EAB71000ADE6D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		EA1EA19F2C94DF890005A490 /* NewPasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordError.swift; sourceTree = "<group>"; };
 		EA1EA1A12C94E2360005A490 /* PokemonTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTabView.swift; sourceTree = "<group>"; };
 		EA1EA1A42C94E2510005A490 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		EAEC4C9F2C82414700B95F5E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EA109EF72E0EAB71000ADE6D /* KeychainManager.swift */,
 				EAEC4CA02C82415F00B95F5E /* Constants.swift */,
 				EA1EA19F2C94DF890005A490 /* NewPasswordError.swift */,
 				EA1EA1AE2C9FEB860005A490 /* Network.swift */,
@@ -326,6 +329,7 @@
 				EAFECDDB2C8CE65D00C71107 /* ForgotPasswordViewModel.swift in Sources */,
 				EAEC4CA32C831A6F00B95F5E /* ForgotPasswordView.swift in Sources */,
 				EA1EA1A72C94E2620005A490 /* PokemonDetailView.swift in Sources */,
+				EA109EF82E0EAB7E000ADE6D /* KeychainManager.swift in Sources */,
 				EA1EA1A02C94DF890005A490 /* NewPasswordError.swift in Sources */,
 				EAAA59C62E0D5B88000EDC69 /* ProfileViewModel.swift in Sources */,
 				EAEC4CA72C831BE500B95F5E /* NewPasswordView.swift in Sources */,

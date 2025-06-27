@@ -12,9 +12,6 @@ struct LoginView: View {
     
     @EnvironmentObject var model: LoginViewModel
     
-    @State var email = ""
-    @State var password = ""
-    
     @Query var users: [User]
     
     var body: some View {
@@ -40,8 +37,22 @@ struct LoginView: View {
                     
                 }
                 
-                CustomTextField(value: $email, title: "Email", prompt:"Email")
-                CustomTextField(value: $password, title: "Password", prompt: "Passsword")
+                CustomTextField(value: $model.email, title: "Email", prompt:"Email")
+                    .onSubmit {
+                        model.checkAutoLogin()
+                    }
+                CustomTextField(value: $model.password, title: "Password", prompt: "Passsword")
+                
+                Toggle(isOn: $model.rememberMe) {
+                    Text("Rememember me?")
+                        .foregroundColor(.pokemonPrimary)
+                        .font(.caption)
+                        .frame(maxWidth: .infinity,alignment: .leading)
+                        
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                
                 HStack {
                     Spacer()
                     Button {
@@ -63,7 +74,7 @@ struct LoginView: View {
                 
                 Button {
                     // Code for log in
-                    model.logIn(existingUsers: users, email: email, password: password)
+                    model.logIn(existingUsers: users)
                     
                     
                 } label: {
@@ -99,9 +110,11 @@ struct LoginView: View {
             NewPasswordView()
         }
         
+        
     }
 }
 
 //#Preview {
 //    LoginView()
+//        .environmentObject(LoginViewModel())
 //}
