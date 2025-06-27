@@ -11,9 +11,7 @@ import PhotosUI
 
 
 struct ProfileView: View {
-    
-    @Environment(\.modelContext) var context
-    
+ 
     @Query var existingUsers: [User]
     
     @StateObject var model = ProfileViewModel()
@@ -56,13 +54,6 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:200, height: 200)
-                            .onAppear {
-                                do {
-                                    try context.save()
-                                } catch {
-                                    print("ISsue saving context: \(error)")
-                                }
-                            }
                     } else {
                         Image(systemName: "photo")
                             .resizable()

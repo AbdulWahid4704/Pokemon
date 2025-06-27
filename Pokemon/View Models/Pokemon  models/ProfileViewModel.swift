@@ -19,7 +19,11 @@ class ProfileViewModel: ObservableObject {
     @Published var email = ""
     @Published var phone = ""
     
-    @Published var profile: UIImage?
+    @Published var profile: UIImage? {
+        didSet {
+            save(image: profile)
+        }
+    }
     @Published var profileSelection: PhotosPickerItem? {
         didSet {
             updateProfilePic(from: profileSelection)
@@ -27,6 +31,8 @@ class ProfileViewModel: ObservableObject {
     }
     
     var user: User?
+    
+    let manager = LocalFileManager.instance
     
     init() {
         
@@ -40,17 +46,18 @@ class ProfileViewModel: ObservableObject {
             self.name = user.name
             self.email = user.email
             self.phone = user.phone
-            self.setProfile(from: user.imageData)
+            self.setProfile(for: user.email)
         }
     }
     
-    func setProfile(from data: Data?) {
+    func setProfile(for email: String) {
         
-        if let data = data, let image = UIImage(data: data) {
-            self.profile = image
-        }
+        guard let image = manager.getImage(name: email, from: Constants.USER_PROFILES) else { return }
+        
+        profile = image
         
     }
+    
     
     func updateProfilePic(from selection: PhotosPickerItem?) {
         
@@ -59,15 +66,26 @@ class ProfileViewModel: ObservableObject {
         Task {
             if let data = try? await selection.loadTransferable(type: Data.self) {
                 if let image = UIImage(data: data) {
-                    profile = image
-                    
-                    user?.imageData = data
+                    self.profile = image
                     
                 }
             }
         }
         
     }
+    
+    func save(image: UIImage?) {
+        
+        if let image = image {
+            // Deelte existing image, if nothing it wouldnt do anything
+            manager.deleteImage(name: self.email, from: Constants.USER_PROFILES)
+            //save new image
+            manager.saveImage(image, name: self.email, in: Constants.USER_PROFILES)
+            
+        }
+    }
+    
+    
     
     func getCurrentUser(users: [User]) -> User? {
         
