@@ -13,11 +13,13 @@ import PhotosUI
 @MainActor
 class ProfileViewModel: ObservableObject {
     
+    @Published var showingCamera = false
+    
     @Published var name = ""
     @Published var email = ""
     @Published var phone = ""
     
-    @Published private (set) var profile: UIImage?
+    @Published var profile: UIImage?
     @Published var profileSelection: PhotosPickerItem? {
         didSet {
             updateProfilePic(from: profileSelection)

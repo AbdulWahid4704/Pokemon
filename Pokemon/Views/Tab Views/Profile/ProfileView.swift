@@ -39,7 +39,15 @@ struct ProfileView: View {
                         PhotosPicker(selection: $model.profileSelection, matching: .images) {
                             Text("Choose a photo")
                         }
-                        Text("Take a photo")
+                        
+                        Button {
+                            model.showingCamera = true
+                        } label: {
+                            Text("Take a photo")
+                        }
+                        .sheet(isPresented: $model.showingCamera) {
+                            CameraView(image: $model.profile)
+                        }
                         
                     }
                     Spacer()
