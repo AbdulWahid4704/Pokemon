@@ -40,7 +40,7 @@ class PokemonDetailViewModel: ObservableObject {
         self.frontDefault = pokemon.sprites.frontDefault
         
         // use another api to get mp3 version, since pokeapi sends ogg
-        self.cry = "https://play.pokemonshowdown.com/audio/cries/\(pokemon.name).mp3"
+        self.cry = Constants.POKEMON_CRY_URL(pokemon.name)
         
         
     }

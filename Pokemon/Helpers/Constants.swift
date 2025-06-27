@@ -15,4 +15,8 @@ struct Constants {
     
     static var POKEMON_URL = "https://pokeapi.co/api/v2/pokemon?limit=10"
     
+    static func POKEMON_CRY_URL(_ name: String) -> String {
+        return "https://play.pokemonshowdown.com/audio/cries/\(name).mp3"
+    }
+    
 }
