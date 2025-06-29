@@ -23,6 +23,9 @@ struct PokemonApp: App {
                     //Request authorization
                     NotificationManager.instance.requestAuthorization()
                     
+                    // set the notification badge to 0
+                    UNUserNotificationCenter.current().setBadgeCount(0)
+                    
                 }
             
             // MARK: test mode,
