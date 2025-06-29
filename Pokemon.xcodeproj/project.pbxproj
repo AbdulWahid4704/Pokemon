@@ -21,6 +21,7 @@
 		EAAA59BF2E0D17E8000EDC69 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59BE2E0D17E8000EDC69 /* PokemonDetailViewModel.swift */; };
 		EAAA59C42E0D5600000EDC69 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59C32E0D5600000EDC69 /* ProfileView.swift */; };
 		EAAA59C62E0D5B88000EDC69 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59C52E0D5B88000EDC69 /* ProfileViewModel.swift */; };
+		EACE6CB42E11489B00AB4412 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACE6CB32E11489B00AB4412 /* NotificationManager.swift */; };
 		EAEC4C872C7F8FBD00B95F5E /* PokemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C862C7F8FBD00B95F5E /* PokemonApp.swift */; };
 		EAEC4C892C7F8FBD00B95F5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEC4C882C7F8FBD00B95F5E /* LoginView.swift */; };
 		EAEC4C8B2C7F8FC000B95F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEC4C8A2C7F8FC000B95F5E /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		EAAA59BE2E0D17E8000EDC69 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
 		EAAA59C32E0D5600000EDC69 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EAAA59C52E0D5B88000EDC69 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EACE6CB32E11489B00AB4412 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		EAEC4C832C7F8FBD00B95F5E /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEC4C862C7F8FBD00B95F5E /* PokemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonApp.swift; sourceTree = "<group>"; };
 		EAEC4C882C7F8FBD00B95F5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				EA1EA19F2C94DF890005A490 /* NewPasswordError.swift */,
 				EA1EA1AE2C9FEB860005A490 /* Network.swift */,
 				EA109EF52E0E74BF000ADE6D /* LocalFileManager.swift */,
+				EACE6CB32E11489B00AB4412 /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				EAEC4CA52C831B2500B95F5E /* OTP View.swift in Sources */,
 				EAFECDDB2C8CE65D00C71107 /* ForgotPasswordViewModel.swift in Sources */,
 				EAEC4CA32C831A6F00B95F5E /* ForgotPasswordView.swift in Sources */,
+				EACE6CB42E11489B00AB4412 /* NotificationManager.swift in Sources */,
 				EA1EA1A72C94E2620005A490 /* PokemonDetailView.swift in Sources */,
 				EA109EF82E0EAB7E000ADE6D /* KeychainManager.swift in Sources */,
 				EA1EA1A02C94DF890005A490 /* NewPasswordError.swift in Sources */,
