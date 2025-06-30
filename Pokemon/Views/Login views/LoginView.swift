@@ -98,6 +98,9 @@ struct LoginView: View {
                 .font(.caption)
                 
             }
+            .onAppear {
+                model.checkAutoLogin()
+            }
         
         case .signUp:
             SignUpView()

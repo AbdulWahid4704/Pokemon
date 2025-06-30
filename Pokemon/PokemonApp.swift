@@ -26,6 +26,8 @@ struct PokemonApp: App {
                     // set the notification badge to 0
                     UNUserNotificationCenter.current().setBadgeCount(0)
                     
+                    
+                    
                 }
             
             // MARK: test mode,
@@ -37,19 +39,16 @@ struct PokemonApp: App {
         }
         .onChange(of: scenePhase) { _, newScenePhase in
             
-            // Check when the app goes into background, log the user out if remember me wasnt checked
+            // Check when the app goes into background, log the user out
             switch newScenePhase {
             case .background:
                 // schedule a single notification which rings 5 seconds after user closes the app
                 NotificationManager.instance.scheduleNotification()
                 
-                // Handle user logged in, next time login logic
-                let flag = UserDefaults.standard.bool(forKey: Constants.REMEMBER_ME_FLAG)
-                if !flag {
-                    // logout the user
-                    UserDefaults.standard.set(nil, forKey: Constants.CURRENT_USER_EMAIL_KEY)
-                    
-                }
+                // Logout the user, when the app goes into background
+                // logout the user
+                UserDefaults.standard.set(nil, forKey: Constants.CURRENT_USER_EMAIL_KEY)
+                
             default: break
             }
         }

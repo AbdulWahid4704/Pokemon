@@ -46,10 +46,10 @@ class LoginViewModel: ObservableObject {
                         print(error.localizedDescription)
                     }
                     
-                    // Set current user, and set flag
+                    // Set current user, set this user as the last user, and set the flag
                     UserDefaults.standard.setValue(email, forKey: Constants.CURRENT_USER_EMAIL_KEY)
                     UserDefaults.standard.set(rememberMe, forKey: Constants.REMEMBER_ME_FLAG)
-                    
+                    UserDefaults.standard.set(email, forKey: Constants.LAST_USER_KEY)
                     // Clear the input fields
                     self.email = ""
                     self.password = ""
@@ -67,11 +67,14 @@ class LoginViewModel: ObservableObject {
     func checkAutoLogin() {
         
         guard
-            let passwordData = KeychainManager.get(service: "Pokemon", account: self.email),
+            UserDefaults.standard.bool(forKey: Constants.REMEMBER_ME_FLAG) == true,
+            let email = UserDefaults.standard.string(forKey: Constants.LAST_USER_KEY),
+            let passwordData = KeychainManager.get(service: "Pokemon", account: email),
             let password = String(data: passwordData, encoding: .utf8) else { return }
         
+        self.email = email
         self.password = password
-        
+        self.rememberMe = UserDefaults.standard.bool(forKey: Constants.REMEMBER_ME_FLAG)
         
         
     }
