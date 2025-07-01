@@ -13,6 +13,7 @@ import SwiftData
 struct PokemonApp: App {
     
     @Environment(\.scenePhase) var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
