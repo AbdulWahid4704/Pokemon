@@ -48,7 +48,7 @@ struct PokemonApp: App {
                 
                 // Logout the user, when the app goes into background
                 // logout the user
-                UserDefaults.standard.set(nil, forKey: Constants.CURRENT_USER_EMAIL_KEY)
+                
                 
             default: break
             }
