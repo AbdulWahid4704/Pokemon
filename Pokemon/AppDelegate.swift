@@ -22,6 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         
         application.registerForRemoteNotifications()
         
+        NotificationManager.instance.registerCategories()
+        
         return true
     }
     
@@ -34,7 +36,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         
         // take the user info
         let userinfo = response.notification.request.content.userInfo
+        // check the action, and open accordingly
+        switch response.actionIdentifier {
+        case Constants.GO_TO_PROFILE:
+            print("DO custom action")
+            NotificationManager.instance.recievedGoToProfile()
+        default:
+            print("Not profile -> \(response.actionIdentifier)")
+            break
+        }
+        
         NotificationCenter.default.post(name: Notification.Name("didRecievePushNotification"), object: nil, userInfo: userinfo)
+        
+        
+        
         completionHandler()
         
     }

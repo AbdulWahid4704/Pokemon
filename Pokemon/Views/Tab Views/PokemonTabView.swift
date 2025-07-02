@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct PokemonTabView: View {
+    
+    @AppStorage(Constants.TAB_SELECTION_KEY) var tabSelection = 1
+    
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection){
             
             PokemonListView()
                 .tabItem {
@@ -17,6 +20,7 @@ struct PokemonTabView: View {
                     Text("Pokemons")
                 }
                 .environmentObject(PokemonListViewModel())
+                .tag(1)
             
             //
             ProfileView()
@@ -24,6 +28,7 @@ struct PokemonTabView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
+                .tag(2)
             
             
         }

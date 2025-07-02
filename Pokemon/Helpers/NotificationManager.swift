@@ -36,6 +36,7 @@ class NotificationManager {
         content.subtitle = "YOu have been inactive for 5 seconds"
         content.sound = .default
         content.badge = 1
+        content.categoryIdentifier = Constants.NOTIFICATION_CATEGORY
         
         //the trigger
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5.0, repeats: false)
@@ -43,10 +44,30 @@ class NotificationManager {
         // the request
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
+        // Add the request
         UNUserNotificationCenter.current().add(request)
         
     }
     
+    func registerCategories() {
+        // register the category
+        // The Action
+        let profileAction = UNNotificationAction(identifier: Constants.GO_TO_PROFILE, title: "Go to Profile", options: .foreground)
+        let category = UNNotificationCategory(identifier: Constants.NOTIFICATION_CATEGORY, actions: [profileAction], intentIdentifiers: [], options: [])
+        
+        // Set the category
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
     
+    func recievedGoToProfile() {
+        
+        if UserDefaults.standard.string(forKey: Constants.CURRENT_USER_EMAIL_KEY) != nil {
+            
+            print("User is logged in")
+            UserDefaults.standard.set(2, forKey: Constants.TAB_SELECTION_KEY)
+            
+        }
+        
+    }
     
 }

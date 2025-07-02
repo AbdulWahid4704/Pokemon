@@ -46,8 +46,8 @@ struct PokemonApp: App {
                 // schedule a single notification which rings 5 seconds after user closes the app
                 NotificationManager.instance.scheduleNotification()
                 
-                // Logout the user, when the app goes into background
-                // logout the user
+                // Reset the tab view
+                UserDefaults.standard.set(1, forKey: Constants.TAB_SELECTION_KEY)
                 
                 
             default: break
