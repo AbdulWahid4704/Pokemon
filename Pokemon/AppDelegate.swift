@@ -29,11 +29,19 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("APNs Device Token: \(token)")
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Error) {
+        print("Failure registering \(error)")
     }
     
     // MARK: UN User Notification Methods
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+        print("recieved notification at \(Date())")
         // take the user info
         let userinfo = response.notification.request.content.userInfo
         // check the action, and open accordingly
@@ -55,6 +63,13 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        print("recieved notification app forereground at  \(Date())")
+        
+        print(notification.request.content.userInfo["fcm_options"])
+        let options = notification.request.content.userInfo["fcm_options"] as! [String: String]
+        let image = options["image"]
+        print(image as! String)
         
         completionHandler([.banner, .sound, .list])
         

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		EA1EA1A92C9E970C0005A490 /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA1A82C9E970C0005A490 /* PokemonData.swift */; };
 		EA1EA1AD2C9FEB1C0005A490 /* PokemonListVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA1AC2C9FEB1C0005A490 /* PokemonListVIewModel.swift */; };
 		EA1EA1AF2C9FEB860005A490 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1EA1AE2C9FEB860005A490 /* Network.swift */; };
+		EAA1C1A02E153F170060BD72 /* NotificationServicesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EAA1C1992E153F170060BD72 /* NotificationServicesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EAAA59BF2E0D17E8000EDC69 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59BE2E0D17E8000EDC69 /* PokemonDetailViewModel.swift */; };
 		EAAA59C42E0D5600000EDC69 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59C32E0D5600000EDC69 /* ProfileView.swift */; };
 		EAAA59C62E0D5B88000EDC69 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA59C52E0D5B88000EDC69 /* ProfileViewModel.swift */; };
@@ -49,6 +50,30 @@
 		EAFECDDB2C8CE65D00C71107 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFECDDA2C8CE65D00C71107 /* ForgotPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EAA1C19E2E153F170060BD72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAEC4C7B2C7F8FBD00B95F5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAA1C1982E153F170060BD72;
+			remoteInfo = NotificationServicesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAA1C1A12E153F170060BD72 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EAA1C1A02E153F170060BD72 /* NotificationServicesExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EA0785262E1271F7003EA2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA0785282E12743B003EA2CF /* Pokemon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pokemon.entitlements; sourceTree = "<group>"; };
@@ -64,6 +89,7 @@
 		EA1EA1A82C9E970C0005A490 /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		EA1EA1AC2C9FEB1C0005A490 /* PokemonListVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListVIewModel.swift; sourceTree = "<group>"; };
 		EA1EA1AE2C9FEB860005A490 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EAA1C1992E153F170060BD72 /* NotificationServicesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServicesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAA59BE2E0D17E8000EDC69 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
 		EAAA59C32E0D5600000EDC69 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EAAA59C52E0D5B88000EDC69 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -89,7 +115,28 @@
 		EAFECDDA2C8CE65D00C71107 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EAA1C1A42E153F170060BD72 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EAA1C1982E153F170060BD72 /* NotificationServicesExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EAA1C19A2E153F170060BD72 /* NotificationServicesExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (EAA1C1A42E153F170060BD72 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NotificationServicesExtension; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		EAA1C1962E153F170060BD72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAEC4C802C7F8FBD00B95F5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEC4C852C7F8FBD00B95F5E /* Pokemon */,
+				EAA1C19A2E153F170060BD72 /* NotificationServicesExtension */,
 				EAEC4C842C7F8FBD00B95F5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEC4C832C7F8FBD00B95F5E /* Pokemon.app */,
+				EAA1C1992E153F170060BD72 /* NotificationServicesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,6 +321,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EAA1C1982E153F170060BD72 /* NotificationServicesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAA1C1A52E153F170060BD72 /* Build configuration list for PBXNativeTarget "NotificationServicesExtension" */;
+			buildPhases = (
+				EAA1C1952E153F170060BD72 /* Sources */,
+				EAA1C1962E153F170060BD72 /* Frameworks */,
+				EAA1C1972E153F170060BD72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EAA1C19A2E153F170060BD72 /* NotificationServicesExtension */,
+			);
+			name = NotificationServicesExtension;
+			packageProductDependencies = (
+			);
+			productName = NotificationServicesExtension;
+			productReference = EAA1C1992E153F170060BD72 /* NotificationServicesExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EAEC4C822C7F8FBD00B95F5E /* Pokemon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAEC4C912C7F8FC000B95F5E /* Build configuration list for PBXNativeTarget "Pokemon" */;
@@ -279,10 +350,12 @@
 				EAEC4C7F2C7F8FBD00B95F5E /* Sources */,
 				EAEC4C802C7F8FBD00B95F5E /* Frameworks */,
 				EAEC4C812C7F8FBD00B95F5E /* Resources */,
+				EAA1C1A12E153F170060BD72 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EAA1C19F2E153F170060BD72 /* PBXTargetDependency */,
 			);
 			name = Pokemon;
 			productName = Pokemon;
@@ -296,9 +369,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					EAA1C1982E153F170060BD72 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					EAEC4C822C7F8FBD00B95F5E = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -321,11 +397,19 @@
 			projectRoot = "";
 			targets = (
 				EAEC4C822C7F8FBD00B95F5E /* Pokemon */,
+				EAA1C1982E153F170060BD72 /* NotificationServicesExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EAA1C1972E153F170060BD72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAEC4C812C7F8FBD00B95F5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +423,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EAA1C1952E153F170060BD72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAEC4C7F2C7F8FBD00B95F5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,7 +470,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EAA1C19F2E153F170060BD72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAA1C1982E153F170060BD72 /* NotificationServicesExtension */;
+			targetProxy = EAA1C19E2E153F170060BD72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EAA1C1A22E153F170060BD72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationServicesExtension/NotificationServicesExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SY4CHD2YQ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServicesExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServicesExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Abdul-Wahid.Pokemon-trial.NotificationServicesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAA1C1A32E153F170060BD72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationServicesExtension/NotificationServicesExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SY4CHD2YQ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServicesExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServicesExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Abdul-Wahid.Pokemon-trial.NotificationServicesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EAEC4C8F2C7F8FC000B95F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -568,6 +723,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EAA1C1A52E153F170060BD72 /* Build configuration list for PBXNativeTarget "NotificationServicesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAA1C1A22E153F170060BD72 /* Debug */,
+				EAA1C1A32E153F170060BD72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EAEC4C7E2C7F8FBD00B95F5E /* Build configuration list for PBXProject "Pokemon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
