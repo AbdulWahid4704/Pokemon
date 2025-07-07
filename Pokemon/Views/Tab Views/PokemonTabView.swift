@@ -19,7 +19,6 @@ struct PokemonTabView: View {
                     Image(systemName: "list.bullet")
                     Text("Pokemons")
                 }
-                .environmentObject(PokemonListViewModel())
                 .tag(1)
             
             //

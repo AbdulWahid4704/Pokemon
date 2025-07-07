@@ -15,10 +15,13 @@ struct PokemonApp: App {
     @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @StateObject var listModel = PokemonListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(LoginViewModel())
+                .environmentObject(listModel)
                 .onAppear {
                     
                     //Request authorization

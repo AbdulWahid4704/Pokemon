@@ -10,6 +10,15 @@ import Foundation
 class PokemonListViewModel: ObservableObject {
     
     @Published var pokemons: [Pokemon] = []
+    @Published var path: [Pokemon] = [] {
+        didSet {
+                if path.count > 1 {
+                    if let last = path.last {
+                        path = [last]
+                    }
+                }
+            }
+    }
     
     init() {
         getPokemons()
@@ -62,6 +71,29 @@ class PokemonListViewModel: ObservableObject {
         }
         
         
+        
+    }
+    
+    func getCustomPokemon(withName name: String) {
+        print("Getting custom pokemon for \(name)")
+        guard let url = URL(string: Constants.CUSTOM_POKEMON_URL(name)) else {
+            return
+        }
+        print(url.absoluteString)
+        // call the network
+        NetworkHelper.getData(url: url) { data in
+            
+            // Confirm there is data
+            guard let data = data  else { return }
+            
+            guard let pokemon = try? JSONDecoder().decode(Pokemon.self, from: data) else { return }
+            
+            //append to the navigation stack path, so it will be pushed onto the view
+            DispatchQueue.main.async {
+                self.path.append(pokemon)
+            }
+            
+        }
         
     }
     

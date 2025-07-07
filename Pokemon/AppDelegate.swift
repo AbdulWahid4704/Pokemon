@@ -24,6 +24,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         
         NotificationManager.instance.registerCategories()
         
+        // For opening a custom notification
+        
+        
         return true
     }
     
@@ -41,9 +44,12 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     // MARK: UN User Notification Methods
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        // Action response based on the action provided
         print("recieved notification at \(Date())")
         // take the user info
-        let userinfo = response.notification.request.content.userInfo
+        let content = response.notification.request.content
+        let userinfo = content.userInfo
         // check the action, and open accordingly
         switch response.actionIdentifier {
         case Constants.GO_TO_PROFILE:
@@ -57,6 +63,13 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         NotificationCenter.default.post(name: Notification.Name("didRecievePushNotification"), object: nil, userInfo: userinfo)
         
         
+        let title = content.title
+        
+        print("Launched from notification with title: \(title)")
+        UserDefaults.standard.set(title, forKey: Constants.CUSTOM_POKEMON_NOTIFICATION)
+        
+        
+        
         
         completionHandler()
         
@@ -65,11 +78,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
         print("recieved notification app forereground at  \(Date())")
-        
-        print(notification.request.content.userInfo["fcm_options"])
-        let options = notification.request.content.userInfo["fcm_options"] as! [String: String]
-        let image = options["image"]
-        print(image as! String)
         
         completionHandler([.banner, .sound, .list])
         
@@ -81,5 +89,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         print("Firebase token -> \(String(describing: fcmToken))")
         
     }
+    
+    
     
 }

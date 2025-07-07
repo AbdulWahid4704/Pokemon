@@ -17,8 +17,7 @@ class NotificationService: UNNotificationServiceExtension {
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         if let bestAttemptContent = bestAttemptContent {
-            // Modify the notification content here...
-            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+            // Modify the notification content here..
             
             guard let options = bestAttemptContent.userInfo["fcm_options"] as? [String: String] else {
                 return
@@ -38,6 +37,7 @@ class NotificationService: UNNotificationServiceExtension {
                     if let localPath = localPath {
                         do {
                             let attachment = try UNNotificationAttachment(identifier: "Notification", url: localPath)
+                            
                             bestAttemptContent.attachments = [attachment]
                         } catch {
                             print(error)

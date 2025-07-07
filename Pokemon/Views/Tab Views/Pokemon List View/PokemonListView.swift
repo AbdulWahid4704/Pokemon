@@ -12,18 +12,21 @@ struct PokemonListView: View {
     @State var pokemons = ["BUlbusaur", "pryo", "Chairzad"]
     @EnvironmentObject var model: PokemonListViewModel
     
+    @State var path: [Any] = []
+    
+    @AppStorage(Constants.CUSTOM_POKEMON_NOTIFICATION) var customPokemon: String = ""
+    
     var body: some View {
         
-        NavigationStack {
+        NavigationStack(path: $model.path) {
+            
             List {
                 
                 ForEach(model.pokemons) { pokemon in
                     
                     //Navigation link to navigate to detailed view
-                    NavigationLink {
-                        PokemonDetailView(model: PokemonDetailViewModel(pokemon: pokemon))
-                        
-                    } label: {
+                    
+                    NavigationLink(value: pokemon) {
                         HStack {
                             
                             // Names
@@ -38,7 +41,7 @@ struct PokemonListView: View {
                                 
                                 // Types
                                 types(pokemon)
-                               
+                                
                             }
                             Spacer()
                             AsyncImage(url: URL(string: pokemon.sprites.frontDefault)) { image in
@@ -59,9 +62,28 @@ struct PokemonListView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Pokemons")
+            .navigationDestination(for: Pokemon.self) { pokemon in
+                PokemonDetailView(model: PokemonDetailViewModel(pokemon: pokemon))
+            }
+            .onChange(of: customPokemon) { _, pokemonName in
+                if pokemonName != "" {
+                    model.getCustomPokemon(withName: pokemonName)
+                    print("On change -> \(customPokemon)")
+                    customPokemon = ""
+                }
+                
+            }
+            .onAppear {
+                if customPokemon != "" {
+                    model.getCustomPokemon(withName: customPokemon)
+                    print("On change -> \(customPokemon)")
+                    customPokemon = ""
+                }
+            }
         }
         
-       
+        
+        
         
     }
     
